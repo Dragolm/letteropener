@@ -6,6 +6,7 @@
     --greenishwhite: rgb(240, 255, 240);
     --darkgreenishwhite: rgb(188, 201, 188);
     --greenishblack: rgb(25, 192, 25);
+    --paleoak: rgb(222, 216, 205);
     --bro: red;
 }
 
@@ -28,16 +29,26 @@
 
 .envelope-container{
     position: relative;
-    background-color: var(--darkgreenishwhite);
+    /* background-color: var(--darkgreenishwhite); */
     z-index: 1;
 }
-
+#envelope-back{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 150px;
+    /* border: black double 5px; */
+    background-color: var(--darkgreenishwhite);
+    z-index: -1;
+}
 .envelope{
     /* background-color: var(--darkgreenishwhite); */
     /* height: 150px;
     width: 300px; */
     height: 0;
     width: 0;
+    position: relative;
     border-top: 75px solid transparent;
     border-bottom: 75px solid var(--darkgreenishwhite);
     border-left: 150px solid var(--darkgreenishwhite);
@@ -65,11 +76,13 @@
 
 .letter{
     position:absolute;
-    top: 10px;
+    /* top: calc(50vh-75px);
+    left: calc(50vw-150px); */
+    top: 8px;
     left: 25px;
     width: 250px;
     height: 130px;
-    background-color: red;
+    background-color: var(--paleoak);
     z-index: -1;
 }
 .letter-lift{
@@ -79,4 +92,14 @@
 }
 .letter-open{
     transform: scale(15);
+}
+
+.falling{
+    transform: translateY(100vh);
+    transition: all 2s ease;
+}
+
+.enlarge{
+    transform: scale(100);
+    transition: all 6s ease;
 }
